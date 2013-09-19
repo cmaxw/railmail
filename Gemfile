@@ -6,6 +6,8 @@ gem 'rails', '4.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'devise'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -16,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,8 +40,12 @@ end
 # Use unicorn as the app server
 # gem 'unicorn'
 
+group :development do
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+  gem 'capistrano'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'debugger'
+  gem 'rspec-rails'
+end
