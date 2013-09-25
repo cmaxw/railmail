@@ -1,0 +1,35 @@
+<h1>Listing email_accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Server</th>
+      <th>Port</th>
+      <th>Ssl</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_accounts.each do |email_account| %>
+      <tr>
+        <td><%= email_account.server %></td>
+        <td><%= email_account.port %></td>
+        <td><%= email_account.ssl %></td>
+        <td><%= email_account.username %></td>
+        <td><%= email_account.password %></td>
+        <td><%= link_to 'Show', email_account %></td>
+        <td><%= link_to 'Edit', edit_email_account_path(email_account) %></td>
+        <td><%= link_to 'Destroy', email_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Email account', new_email_account_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Server:</strong>
+  <%= @email_account.server %>
+</p>
+
+<p>
+  <strong>Port:</strong>
+  <%= @email_account.port %>
+</p>
+
+<p>
+  <strong>Ssl:</strong>
+  <%= @email_account.ssl %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @email_account.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @email_account.password %>
+</p>
+
+<%= link_to 'Edit', edit_email_account_path(@email_account) %> |
+<%= link_to 'Back', email_accounts_path %>
