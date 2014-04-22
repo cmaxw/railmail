@@ -1,10 +1,6 @@
 class User < ActiveRecord::Base
-  authenticates_with_sorcery!
-
-  validates_confirmation_of :password
-  validates_presence_of :password, on: :create
-  validates_presence_of :username
-  validates_uniqueness_of :username
-
-  has_many :email_accounts
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 end

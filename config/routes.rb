@@ -1,4 +1,5 @@
 Railmail::Application.routes.draw do
+  devise_for :users
   resources :email_accounts
 
   get "logout" => "sessions#destroy", :as => "logout"
